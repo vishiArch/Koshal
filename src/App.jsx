@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './components/Navbar'
+import Menu from './components/Menu'
 import Project from './components/Project'
 import About from './components/About'
 import Target from './components/Target'
@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <div>
-      <Navbar/>
+      <Menu/>
       <Project/>
       <About/>
       <Target/>

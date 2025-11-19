@@ -2,157 +2,263 @@ import React from "react";
 import { Award, Leaf, Users } from "lucide-react";
 
 export default function About() {
-  const values = [
-    {
-      icon: Award,
-      title: "Excellence",
-      subtitle: "Quality & Craftsmanship",
-      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop", // building image
-      description:
-        "We maintain the highest standards of construction and design, ensuring every property exceeds expectations. Our commitment to quality is reflected in every project we undertake.",
-    },
-    {
-      icon: Leaf,
-      title: "Sustainability",
-      subtitle: "Environmental Responsibility",
-      img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1400&auto=format&fit=crop", // green / eco image
-      description:
-        "We believe in building for tomorrow. Our eco-friendly practices and green initiatives ensure minimal environmental impact while creating sustainable communities.",
-    },
-    {
-      icon: Users,
-      title: "Community",
-      subtitle: "People First Approach",
-      img: "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2V8ZW58MHwwfDB8fHww", // community image
-      description:
-        "Building homes that foster meaningful connections. We create spaces where communities thrive with modern amenities and shared experiences.",
-    },
-  ];
+    const brandGreen = "#0C3E31";
+    const brandGold = "#D4A947";
 
-  return (
-    <section
-      id="our-story"
-      className="px-4 pt-24 pb-10 bg-gradient-to-b from-[#1C2129] to-[#252B34]"
-    >
-      <div className="max-w-7xl mx-auto">
+    const values = [
+        {
+            icon: Award,
+            title: "Excellence",
+            subtitle: "Quality & Craftsmanship",
+            img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1400&auto=format&fit=crop",
+            description:
+                "We uphold unmatched standards in construction and design, ensuring every project reflects our commitment to excellence.",
+        },
+        {
+            icon: Leaf,
+            title: "Sustainability",
+            subtitle: "Environmental Responsibility",
+            img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1400&auto=format&fit=crop",
+            description:
+                "We build with a vision for tomorrow — adopting eco-friendly practices that preserve nature while enhancing modern living.",
+        },
+        {
+            icon: Users,
+            title: "Community",
+            subtitle: "People First Approach",
+            img: "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?w=500&auto=format&fit=crop&q=60",
+            description:
+                "We design homes that encourage connection, comfort, and community — creating spaces where people truly thrive.",
+        },
+    ];
 
-        {/* About Main Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    return (
+        <section
+            id="our-story"
+            className="px-4 pt-28 pb-20"
+            style={{
+                background: `linear-gradient(180deg, rgba(12,62,49,0.05) 0%, rgba(12,62,49,0.18) 60%, rgba(2,6,23,0.85) 100%)`,
+            }}
+        >
+            <div className="max-w-7xl mx-auto">
 
-          {/* Left Content */}
-          <div>
-            <span className="text-amber-500 text-sm font-semibold uppercase tracking-wider">
-              Our Legacy
-            </span>
+                {/* LEFT SIDE */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Building <span className="text-amber-500">Dreams</span> for 18 Years
-            </h2>
+                    <div>
+                        <span
+                            style={{
+                                color: brandGold,
+                                fontFamily: "'Montserrat', sans-serif",
+                                letterSpacing: "1px",
+                                fontWeight: 600,
+                                fontSize: "0.85rem",
+                            }}
+                            className="uppercase"
+                        >
+                            Our Legacy
+                        </span>
 
-            <p className="text-gray-300 text-lg mb-4 leading-relaxed">
-              Since 2006, Koshal Builders has been at the forefront of real
-              estate innovation in Odisha. What began as a vision to create
-              premium homes has evolved into a legacy of trust, quality, and
-              excellence.
-            </p>
+                        <h2
+                            className="mb-6 leading-tight"
+                            style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: "clamp(2.5rem, 6vw, 3.8rem)",
+                                fontWeight: 700,
+                                color: "white",
+                            }}
+                        >
+                            Building <span style={{ color: brandGold }}>Dreams</span> for 18 Years
+                        </h2>
 
-            <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-              Our journey is marked by countless happy families, successful
-              businesses, and thriving communities. We don't just build
-              properties; we create living experiences that enrich lives and
-              foster lasting memories.
-            </p>
+                        <p
+                            style={{
+                                color: "rgba(255,255,255,0.85)",
+                                fontFamily: "'Montserrat', sans-serif",
+                                fontSize: "1.1rem",
+                                lineHeight: 1.6,
+                            }}
+                            className="mb-4"
+                        >
+                            Since 2006, Fortune Elements Builders has shaped the future of real estate in Odisha —
+                            crafting premium spaces rooted in trust, quality, and innovation.
+                        </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              {[
-                { number: "18+", label: "Years of Excellence" },
-                { number: "2000+", label: "Happy Families" },
-                { number: "50+", label: "Completed Projects" },
-                { number: "5000+", label: "Satisfied Customers" },
-              ].map((stat, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 bg-white/5 border border-white/10 rounded-lg hover:border-amber-500/50 transition-colors"
-                >
-                  <p className="text-3xl font-bold text-amber-500 mb-1">
-                    {stat.number}
-                  </p>
-                  <p className="text-gray-400 text-sm">{stat.label}</p>
+                        <p
+                            style={{
+                                color: "rgba(255,255,255,0.65)",
+                                fontFamily: "'Montserrat', sans-serif",
+                                fontSize: "1.05rem",
+                                lineHeight: 1.6,
+                            }}
+                            className="mb-6"
+                        >
+                            Our journey reflects countless happy families, thriving communities, and projects built with passion and integrity.
+                        </p>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-2 gap-6 mb-8">
+                            {[ 
+                                { number: "18+", label: "Years of Excellence" },
+                                { number: "2000+", label: "Happy Families" },
+                                { number: "50+", label: "Completed Projects" },
+                                { number: "5000+", label: "Satisfied Customers" },
+                            ].map((stat, idx) => (
+                                <div
+                                    key={idx}
+                                    className="p-4 rounded-lg transition-all"
+                                    style={{
+                                        background: "rgba(255,255,255,0.05)",
+                                        border: "1px solid rgba(255,255,255,0.12)",
+                                        backdropFilter: "blur(8px)",
+                                    }}
+                                >
+                                    <p
+                                        style={{
+                                            color: brandGold,
+                                            fontFamily: "'Playfair Display', serif",
+                                            fontSize: "2rem",
+                                            fontWeight: 700,
+                                        }}
+                                    >
+                                        {stat.number}
+                                    </p>
+                                    <p
+                                        style={{
+                                            color: "rgba(255,255,255,0.65)",
+                                            fontFamily: "'Montserrat', sans-serif",
+                                            fontSize: "0.9rem",
+                                        }}
+                                    >
+                                        {stat.label}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* CTA */}
+                        <a
+                            href="https://wa.me/919876543210"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-10 py-4 rounded-lg font-bold transition-transform"
+                            style={{
+                                background: brandGold,
+                                color: brandGreen,
+                                fontFamily: "'Montserrat', sans-serif",
+                                boxShadow: "0 10px 25px rgba(212,169,71,0.25)",
+                            }}
+                        >
+                            Learn More About Us
+                        </a>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=500&auto=format&fit=crop&q=60"
+                            alt="Fortune Elements Project"
+                            className="w-full rounded-xl shadow-2xl object-cover transition-all duration-300 hover:scale-105"
+                            style={{
+                                boxShadow: "0 20px 60px rgba(0,0,0,0.45)",
+                            }}
+                        />
+                    </div>
                 </div>
-              ))}
+
+                {/* CORE VALUES */}
+                <div className="mt-20">
+                    <div className="text-center mb-14">
+                        <h3
+                            className="leading-tight"
+                            style={{
+                                fontFamily: "'Playfair Display', serif",
+                                fontSize: "clamp(2rem, 5vw, 3rem)",
+                                fontWeight: 700,
+                                color: "white",
+                            }}
+                        >
+                            Our Core <span style={{ color: brandGold }}>Values</span>
+                        </h3>
+
+                        <p
+                            style={{
+                                color: "rgba(255,255,255,0.65)",
+                                fontFamily: "'Montserrat', sans-serif",
+                                fontSize: "1.05rem",
+                                marginTop: "0.5rem",
+                            }}
+                        >
+                            Principles that guide every decision and every development we create.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        {values.map((value, index) => {
+                            const Icon = value.icon;
+                            return (
+                                <div
+                                    key={index}
+                                    className="p-10 rounded-2xl transition-all"
+                                    style={{
+                                        background: "rgba(255,255,255,0.06)",
+                                        border: "1px solid rgba(255,255,255,0.1)",
+                                        backdropFilter: "blur(10px)",
+                                    }}
+                                >
+                                    <img
+                                        src={value.img}
+                                        className="w-full h-40 object-cover rounded-xl mb-6"
+                                    />
+
+                                    <div
+                                        className="w-16 h-16 mx-auto mb-6 rounded-xl flex items-center justify-center"
+                                        style={{
+                                            background: "rgba(212,169,71,0.15)",
+                                        }}
+                                    >
+                                        <Icon size={30} style={{ color: brandGold }} />
+                                    </div>
+
+                                    <h4
+                                        style={{
+                                            fontFamily: "'Playfair Display', serif",
+                                            fontSize: "1.8rem",
+                                            fontWeight: 700,
+                                            color: "white",
+                                        }}
+                                        className="mb-2 text-center"
+                                    >
+                                        {value.title}
+                                    </h4>
+
+                                    <p
+                                        style={{
+                                            color: brandGold,
+                                            fontFamily: "'Montserrat', sans-serif",
+                                            fontSize: "0.9rem",
+                                            fontWeight: 600,
+                                        }}
+                                        className="text-center mb-4"
+                                    >
+                                        {value.subtitle}
+                                    </p>
+
+                                    <p
+                                        className="leading-relaxed text-center"
+                                        style={{
+                                            color: "rgba(255,255,255,0.65)",
+                                            fontFamily: "'Montserrat', sans-serif",
+                                        }}
+                                    >
+                                        {value.description}
+                                    </p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
-
-            {/* Button */}
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-amber-500 text-black rounded-lg hover:bg-amber-600 transition-all duration-300 font-bold text-lg hover:scale-105"
-            >
-              Learn More About Us
-            </a>
-          </div>
-
-          {/* Right Image (Koshal Builders Projects) */}
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2V8ZW58MHwyfDB8fHww"
-              alt="Koshal Builders Projects"
-              className="w-full rounded-[10px] shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-amber-500/20 object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Core Values */}
-        <div className="mt-20">
-          <div className="text-center mb-14">
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Core <span className="text-amber-500">Values</span>
-            </h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              These principles guide every decision we make and every property
-              we build.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="p-10 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent hover:border-amber-500/50 hover:bg-white/10 transition-all duration-300"
-                >
-                  {/* Image for each value (including Community) */}
-                  <img
-                    src={value.img}
-                    alt={`${value.title} image`}
-                    className="w-full h-40 object-cover rounded-xl mb-6"
-                  />
-
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-amber-500/20 rounded-xl flex items-center justify-center mb-6 mx-auto">
-                    <Icon className="text-amber-500" size={32} />
-                  </div>
-
-                  <h4 className="text-2xl font-bold text-white mb-2">
-                    {value.title}
-                  </h4>
-
-                  <p className="text-amber-500/80 text-sm font-semibold mb-4">
-                    {value.subtitle}
-                  </p>
-
-                  <p className="text-gray-400 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
